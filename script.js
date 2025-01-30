@@ -4,15 +4,13 @@ function getComputerChoice () {
     return choiceOptions[Math.floor(Math.random() * 3)];
 }
 
-let myChoice = prompt("Enter your choice (rock, paper, scissors): ");
 
-while (!choiceOptions.includes(myChoice)) {
-    myChoice = prompt("Invalid choice. Enter your choice (rock, paper, scissors): ");
-}
+
+
 
 let computerChoice = getComputerChoice();
 
-function whoWon (computerChoice, myChoice) {
+function playRound (computerChoice, myChoice) {
     if (computerChoice === myChoice) {
         return "It's a tie!";
     }
@@ -35,4 +33,37 @@ function whoWon (computerChoice, myChoice) {
         return "You win!";
     }
 }
-console.log(whoWon(computerChoice, myChoice));
+let myScore = 0;
+let computerScore = 0;
+let round = 5;
+
+function game () {
+    for (let i = 1; i <= round; i++) {
+        let myChoice = prompt("Enter your choice (rock, paper, scissors): ");
+
+        while (!choiceOptions.includes(myChoice)) {
+            myChoice = prompt("Invalid choice. Enter your choice (rock, paper, scissors): ");
+        }
+
+        let result = playRound(computerChoice, myChoice);
+        if (result === "You win!") {
+            myScore++;
+        }
+        else if (result === "Computer wins!") {
+            computerScore++;
+        }
+        console.log(playRound(computerChoice, myChoice));
+    }
+
+    if (myScore > computerScore) {
+        console.log("You win the game! Score: " + myScore + " - " + computerScore);
+    }
+    else if (myScore < computerScore) {
+        console.log("Computer wins the game! Score: " + computerScore + " - " + myScore);
+    }
+    else {
+        console.log("It's a tie! Score: " + myScore + " - " + computerScore);
+    }
+}
+
+game()
