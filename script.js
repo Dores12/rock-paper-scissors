@@ -12,4 +12,27 @@ while (!choiceOptions.includes(myChoice)) {
 
 let computerChoice = getComputerChoice();
 
-console.log(computerChoice + " " + myChoice);
+function whoWon (computerChoice, myChoice) {
+    if (computerChoice === myChoice) {
+        return "It's a tie!";
+    }
+    else if (computerChoice === "rock" && myChoice === "scissors") {
+        return "Computer wins!";
+    }
+    else if (computerChoice === "rock" && myChoice === "paper") {
+        return "You win!";
+    }
+    else if (computerChoice === "paper" && myChoice === "rock") {
+        return "Computer wins!";
+    }
+    else if (computerChoice === "paper" && myChoice === "scissors") {
+        return "You win!";
+    }
+    else if (computerChoice === "scissors" && myChoice === "paper") {
+        return "Computer wins!";
+    }
+    else if (computerChoice === "scissors" && myChoice === "rock") {
+        return "You win!";
+    }
+}
+console.log(whoWon(computerChoice, myChoice));
