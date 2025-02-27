@@ -1,8 +1,19 @@
-let choiceOptions = ["rock", "paper", "scissors"];
+let choiceOptions = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice () {
     return choiceOptions[Math.floor(Math.random() * 3)];
 }
+
+const button = document.querySelectorAll("button");
+
+button.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const myChoice = e.currentTarget.textContent;
+        console.log(myChoice)
+    })
+})
+
+
 
 function playRound (computerChoice, myChoice) {
     if (computerChoice === myChoice) {
