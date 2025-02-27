@@ -1,0 +1,57 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    background-color: #023535;
+    color: #BDE038;
+}
+
+.game {
+    background-color: #015958;
+    max-width: 40%;
+    max-height: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 31px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem .7rem;
+}
+
+.scoreboard {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 70px 70px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+.scoreboard h1 {
+    grid-column: span 2;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #818274;
+    border-radius: 3px;
+    color: #BDE038;
+    font-size: 1rem;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.176);
+    cursor: pointer;
+    padding: .5rem .8rem;
+
+}
+
+button:hover {
+    background-color: #69695f;
+}

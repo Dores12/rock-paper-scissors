@@ -33,10 +33,10 @@ let round = 5;
 
 function game () {
     for (let i = 1; i <= round; i++) {
-        let myChoice = prompt("Round: " + i + "\nCurrent score: " + computerScore + " : " + myScore + "\nEnter your choice (rock, paper, scissors): ");
+        let myChoice = prompt("Round: " + i + "\nCurrent score: " + computerScore + " : " + myScore + "\nEnter your choice (rock, paper, scissors): "); 
         let computerChoice = getComputerChoice();
 
-        console.log("Computer choice: " + computerChoice + " Your choice: " + myChoice);
+        console.log("Computer choice: " + computerChoice + " || Your choice: " + myChoice);
 
         while (!choiceOptions.includes(myChoice)) {
             myChoice = prompt("Invalid choice. Enter your choice (rock, paper, scissors): ");
@@ -63,4 +63,4 @@ function game () {
     }
 }
 
-game()
+/* game() */
