@@ -1,19 +1,8 @@
-let choiceOptions = ["Rock", "Paper", "Scissors"];
+let choiceOptions = ["rock", "paper", "scissors"];
 
 function getComputerChoice () {
     return choiceOptions[Math.floor(Math.random() * 3)];
 }
-
-const button = document.querySelectorAll("button");
-
-button.forEach(button => {
-    button.addEventListener('click', (e) => {
-        const myChoice = e.currentTarget.textContent;
-        console.log(myChoice)
-    })
-})
-
-
 
 function playRound (computerChoice, myChoice) {
     if (computerChoice === myChoice) {
@@ -38,29 +27,45 @@ function playRound (computerChoice, myChoice) {
         return "You win!";
     }
 }
-let myScore = 0;
-let computerScore = 0;
+
+let myChoice = "";
+let rounds = 5;
+let getRoundNum = parseInt(document.querySelector(".round").textContent.split(": ")[1]);
+const button = document.querySelectorAll("button");
+
+button.forEach(button => {
+    button.addEventListener('click', (e) => {
+        myChoice = e.currentTarget.textContent.toLowerCase();
+        let computerChoice = getComputerChoice();
+        let result = playRound(computerChoice, myChoice);
+        console.log(result);
+        
+    })
+})
+
+
+/*
 let round = 5;
+
+let myScore = document.querySelector(".myscore").textContent;
+let computerScore = document.querySelector(".computerscore").textContent;
 
 function game () {
     for (let i = 1; i <= round; i++) {
-        let myChoice = prompt("Round: " + i + "\nCurrent score: " + computerScore + " : " + myScore + "\nEnter your choice (rock, paper, scissors): "); 
         let computerChoice = getComputerChoice();
 
-        console.log("Computer choice: " + computerChoice + " || Your choice: " + myChoice);
-
-        while (!choiceOptions.includes(myChoice)) {
-            myChoice = prompt("Invalid choice. Enter your choice (rock, paper, scissors): ");
-        }
 
         let result = playRound(computerChoice, myChoice);
         if (result === "You win!") {
             myScore++;
+            console.log(myScore)
+
         }
         else if (result === "Computer wins!") {
             computerScore++;
+            computerScore.textContent = computerScore;
         }
-        console.log(playRound(computerChoice, myChoice));
+        
     }
 
     if (myScore > computerScore) {
@@ -74,4 +79,5 @@ function game () {
     }
 }
 
-/* game() */
+game()
+*/
