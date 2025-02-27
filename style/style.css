@@ -32,6 +32,10 @@ body {
     grid-column: span 2;
 }
 
+.new-game {
+    margin-top: 20px;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
