@@ -28,6 +28,14 @@ function playRound (computerChoice, myChoice) {
     }
 }
 
+
+let myScoreElement = document.querySelector(".myscore");
+let computerScoreElement = document.querySelector(".computerscore");
+
+let myScore = 0;
+let computerScore = 0;
+
+
 let myChoice = "";
 let rounds = 5;
 let getRoundNum = parseInt(document.querySelector(".round").textContent.split(": ")[1]);
@@ -38,7 +46,17 @@ button.forEach(button => {
         myChoice = e.currentTarget.textContent.toLowerCase();
         let computerChoice = getComputerChoice();
         let result = playRound(computerChoice, myChoice);
-        console.log(result);
+
+        if (result === "You win!") {
+            myScore += 1;
+        }
+        else if (result === "Computer wins!") {
+            computerScore += 1;
+        }
+
+        computerScoreElement.textContent = computerScore;
+        myScoreElement.textContent = myScore; 
+
         
     })
 })
