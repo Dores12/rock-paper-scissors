@@ -28,6 +28,12 @@ function playRound (computerChoice, myChoice) {
     }
 }
 
+function newGame () {
+    myScore = 0;
+    computerScore = 0;
+    getRoundNum = 1;
+}
+
 
 let myScoreElement = document.querySelector(".myscore");
 let computerScoreElement = document.querySelector(".computerscore");
@@ -54,9 +60,13 @@ button.forEach(button => {
             computerScore += 1;
         }
 
+        getRoundNum++;
         computerScoreElement.textContent = computerScore;
         myScoreElement.textContent = myScore; 
 
+        document.querySelector(".mychoice").textContent = "You: " + myChoice;
+        document.querySelector(".computerchoice").textContent = "Computer: " + computerChoice;
+        document.querySelector(".round").textContent = "Round: " + getRoundNum;
         
     })
 })
