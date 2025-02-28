@@ -16,17 +16,7 @@ let getRoundNum = 1;
 const button = document.querySelectorAll(".play-button");
 
 const userInput = document.querySelector("input");
-/* const bttnStart = document.querySelector(".start-button");
 
-bttnStart.addEventListener("click", () => {
-    let inputValue = userInput.value;
-
-    if (inputValue === "")
-        return
-
-    rounds = inputValue;
-
-}) */
 userInput.focus();
 
 function getComputerChoice () {
@@ -135,10 +125,3 @@ function handleClick(e) {
         else getRoundNum++;
 
     }
-
-/*
-button.forEach(button => {
-    button.addEventListener('click', handleClick);
-});
-*/
-
